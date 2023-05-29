@@ -27,6 +27,23 @@ function FormGroup(props) {
     function handleSubmit(event) {
         event.preventDefault()
 
+         // if (formData === "") {
+        //     return props.setSearch(jobs)
+        // }
+        // else {
+        //     const filteredData = props.jobs.filter((item) => {
+        //         return item.position.toLowerCase().includes(formData.title.toLowerCase()) && item.location.toLowerCase().includes(formData.location.toLowerCase()) && item.contract.includes(formData.fulltime)
+        //     })
+        //     props.setSearch(filteredData)
+        //     console.log(formData);
+        // }
+
+        // const filteredData = props.jobs.filter((item) => {
+        //     return item.position.toLowerCase().includes(formData.title.toLowerCase()) && item.location.toLowerCase().includes(formData.location.toLowerCase()) && item.contract.includes(formData.fulltime)
+        //   })
+
+        // props.setSearch(filteredData)
+
         const filteredJobs = props.jobs.filter(job => {
             if (formData.title && !job.position.toLowerCase().includes(formData.title.toLowerCase())) {
               return false;
