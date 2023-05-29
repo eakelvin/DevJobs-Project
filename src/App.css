@@ -20,8 +20,8 @@
 
 
 .size {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 main.dark {
@@ -32,11 +32,9 @@ main.dark {
 input:active,
 input:focus,
 input:hover,
-input:visited,
 input.active,
 input.focus,
-input.hover,
-input.visited{
+input.hover{
     box-shadow: unset !important;
     outline: 0 !important;
 }

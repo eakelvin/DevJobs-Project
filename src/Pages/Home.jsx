@@ -3,6 +3,7 @@ import Header from '../Components/Header';
 import Form from '../Components/Form';
 import Map from '../Components/Map';
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -12,7 +13,14 @@ function Home() {
     <div>
       <Header />
       <Form jobs={jobs} setJobs={setJobs} setSearch={setSearch} />
-      <Map jobs={jobs} setJobs={setJobs} search={search} setSearch={setSearch} />  
+      <Map jobs={jobs} setJobs={setJobs} search={search} setSearch={setSearch} />
+
+      <div className='p-5 d-flex justify-content-center'>
+        <Button variant="primary" size="lg">
+            Load More
+        </Button>
+      </div>
+        
     </div>
   )
 }

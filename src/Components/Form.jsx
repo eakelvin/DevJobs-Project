@@ -4,8 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { BsSearch } from "react-icons/bs";
 import { ThemeContextConsumer } from './ThemeContext';
+import Modal from 'react-bootstrap/Modal';
 
 function FormGroup(props) {
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [formData, setFormData] = useState({
         title: "",
@@ -26,23 +31,6 @@ function FormGroup(props) {
 
     function handleSubmit(event) {
         event.preventDefault()
-
-         // if (formData === "") {
-        //     return props.setSearch(jobs)
-        // }
-        // else {
-        //     const filteredData = props.jobs.filter((item) => {
-        //         return item.position.toLowerCase().includes(formData.title.toLowerCase()) && item.location.toLowerCase().includes(formData.location.toLowerCase()) && item.contract.includes(formData.fulltime)
-        //     })
-        //     props.setSearch(filteredData)
-        //     console.log(formData);
-        // }
-
-        // const filteredData = props.jobs.filter((item) => {
-        //     return item.position.toLowerCase().includes(formData.title.toLowerCase()) && item.location.toLowerCase().includes(formData.location.toLowerCase()) && item.contract.includes(formData.fulltime)
-        //   })
-
-        // props.setSearch(filteredData)
 
         const filteredJobs = props.jobs.filter(job => {
             if (formData.title && !job.position.toLowerCase().includes(formData.title.toLowerCase())) {
@@ -68,6 +56,8 @@ function FormGroup(props) {
             location: "",
             fulltime: false
         })
+
+        handleClose()
     }
   
   return (
@@ -85,8 +75,44 @@ function FormGroup(props) {
                                     value={formData.title} 
                                     type="text" 
                                     placeholder="Filter by title, companies, expertise..." />
-                     <img className='size d-block d-sm-none mt-4 mx-3' src="./assets/mobile/icon-filter.svg" alt="" />
-                     <div style={{backgroundColor: "#5964E0", height:"50px"}} className='mt-3 p-3 rounded-3 d-block d-sm-none'>
+
+                    <div onClick={handleShow}>
+                        <img className='size d-block d-sm-none mt-4 mx-3' src="./assets/mobile/icon-filter.svg" alt="" />
+                    </div> 
+                    <Modal className='p-5' centered show={show} onHide={handleClose} animation={false}>
+                        <Modal.Header>
+                            <Modal.Title>
+                                <span className='d-flex flex-row p-2'>
+                                    <Form.Label><img className='' src='./assets/desktop/icon-location.svg' /></Form.Label>
+                                    <Form.Control className={`border border-0 mt-2 bg-${context.theme}`} 
+                                                type='text'
+                                                name='location'
+                                                value={formData.location}
+                                                onChange={handleChange} 
+                                                placeholder='Filter by Location...'>
+                                    </Form.Control>
+                                </span>
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="form-check checkbox-xl ms-2">
+                            <input style={{backgroundColor: "#9DAEC2"}} className="form-check-input p-2" 
+                                type="checkbox" 
+                                name="fulltime"
+                                checked={formData.fulltime}
+                                onChange={handleChange} 
+                                id="checkbox-3" />
+                            <label className={`form-check-label fw-bold fs-6 text-${context.theme === "light" ? "dark" : "light"}`}htmlFor="checkbox-3">Full Time Only</label>
+                            </div>
+
+                            <div className="d-grid gap-2 mt-4">
+                            <Button type='submit' onClick={handleSubmit} variant="primary" size="lg">
+                                Search
+                            </Button>
+                            </div>
+                     </Modal.Body>
+                    </Modal>
+                    <div style={{backgroundColor: "#5964E0", height:"50px"}} className='mt-3 p-3 rounded-3 d-block d-sm-none'>
                          <BsSearch className='mb-5' color='white' size={25} />
                      </div>
                      
