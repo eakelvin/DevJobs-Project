@@ -1,0 +1,60 @@
+.purple {
+  color: #5964E0;
+}
+
+.back {
+  background-image: url("./assets/desktop/bg-pattern-header.svg");
+  height: 23vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.checkbox-xl .form-check-input {
+  top: 1.5rem;
+  scale: 1.5;
+} 
+.checkbox-xl .form-check-label {
+  padding-left: 5px;
+}
+
+
+
+.size {
+  height: 50px;
+  width: 50px;
+}
+
+main.dark {
+  background-color: #282D35;
+  color: white;
+}
+
+input:active,
+input:focus,
+input:hover,
+input:visited,
+input.active,
+input.focus,
+input.hover,
+input.visited{
+    box-shadow: unset !important;
+    outline: 0 !important;
+}
+
+
+@media only screen and (max-width: 480px) {
+  .back {
+    background-image: url("./assets/mobile/bg-pattern-header.svg");
+  }
+}
+@media only screen and (max-width: 766px) {
+  .checkbox-xl .form-check-input {
+    scale: 1.0;
+  } 
+  
+  .ft {
+    font-size: 14px;
+  }
+  
+}
+
