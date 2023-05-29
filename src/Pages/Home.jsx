@@ -11,7 +11,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <Form jobs={jobs} setSearch={setSearch} />
+      <Form jobs={jobs} setJobs={setJobs} setSearch={setSearch} />
       <Map jobs={jobs} setJobs={setJobs} search={search} setSearch={setSearch} />  
     </div>
   )

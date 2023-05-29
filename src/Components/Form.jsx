@@ -26,15 +26,13 @@ function FormGroup(props) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        
-       
 
         const filteredJobs = props.jobs.filter(job => {
-            if (formData.title && !job.position.includes(formData.title)) {
+            if (formData.title && !job.position.toLowerCase().includes(formData.title.toLowerCase())) {
               return false;
             }
           
-            if (formData.location && !job.location.includes(formData.location)) {
+            if (formData.location && !job.location.toLowerCase().includes(formData.location.toLowerCase())) {
               return false;
             }
           
