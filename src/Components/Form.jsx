@@ -69,7 +69,7 @@ function FormGroup(props) {
                  
                  <div className='col-sm-3 col-md-3 col-lg-4 d-flex flex-row border-end h-100'>
                      <Form.Label><img className='mt-4 d-none d-sm-block' src='./assets/desktop/icon-search.svg' /></Form.Label>
-                     <Form.Control className={`border border-0 bg-${context.theme}`}
+                     <Form.Control className={`border border-0 bg-${context.theme} text-${context.theme === "light" ? "dark" : "light"}`}
                                     onChange={handleChange}
                                     name='title'
                                     value={formData.title} 
@@ -80,11 +80,12 @@ function FormGroup(props) {
                         <img className='size d-block d-sm-none mt-4 mx-3' src="./assets/mobile/icon-filter.svg" alt="" />
                     </div> 
                     <Modal className='p-5' centered show={show} onHide={handleClose} animation={false}>
+                        <span className={`bg-${context.theme}`}>
                         <Modal.Header>
                             <Modal.Title>
                                 <span className='d-flex flex-row p-2'>
                                     <Form.Label><img className='' src='./assets/desktop/icon-location.svg' /></Form.Label>
-                                    <Form.Control className={`border border-0 mt-2 bg-${context.theme}`} 
+                                    <Form.Control className={`border border-0 mt-2 bg-${context.theme} text-${context.theme === "light" ? "dark" : "light"}`} 
                                                 type='text'
                                                 name='location'
                                                 value={formData.location}
@@ -106,11 +107,12 @@ function FormGroup(props) {
                             </div>
 
                             <div className="d-grid gap-2 mt-4">
-                            <Button type='submit' onClick={handleSubmit} variant="primary" size="lg">
+                            <Button style={{backgroundColor: "#5964E0"}} type='submit' onClick={handleSubmit} size="lg">
                                 Search
                             </Button>
                             </div>
                      </Modal.Body>
+                     </span>
                     </Modal>
                     <div style={{backgroundColor: "#5964E0", height:"50px"}} className='mt-3 p-3 rounded-3 d-block d-sm-none'>
                          <BsSearch className='mb-5' color='white' size={25} />
@@ -122,7 +124,7 @@ function FormGroup(props) {
                  <div className='col-sm-4 col-md-4 col-lg-3 d-none d-sm-block border-end h-100'>
                      <span className='d-flex flex-row p-2'>
                      <Form.Label><img className='mt-4 mx-1' src='./assets/desktop/icon-location.svg' /></Form.Label>
-                     <Form.Control className={`border border-0 mt-2 bg-${context.theme}`} 
+                     <Form.Control className={`border border-0 mt-2 bg-${context.theme} text-${context.theme === "light" ? "dark" : "light"}`} 
                                     type='text'
                                     name='location'
                                     value={formData.location}

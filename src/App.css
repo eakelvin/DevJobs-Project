@@ -38,6 +38,12 @@ input.hover{
     box-shadow: unset !important;
     outline: 0 !important;
 }
+.btn:hover {
+  background-color:#939BF4 !important ;
+}
+.btn1:hover {
+  background-color: #6E8098 !important;
+}
 
 
 @media only screen and (max-width: 480px) {

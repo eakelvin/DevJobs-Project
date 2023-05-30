@@ -16,7 +16,7 @@ function Home() {
       <Map jobs={jobs} setJobs={setJobs} search={search} setSearch={setSearch} />
 
       <div className='p-5 d-flex justify-content-center'>
-        <Button variant="primary" size="lg">
+        <Button className='btn' style={{backgroundColor: "#5964E0"}} variant="primary" size="lg">
             Load More
         </Button>
       </div>

@@ -6,7 +6,6 @@ import { ThemeContextConsumer } from '../Components/ThemeContext'
 import { Container } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import context from 'react-bootstrap/esm/AccordionContext'
 
 function JobDetails() {
   const {jobid} = useParams()
@@ -20,10 +19,31 @@ function JobDetails() {
         <>
       <Header />
 
-        
+      <Container className='d-block d-sm-block d-md-none pb-5'>
+        <div className='relative'>
+          <div style={{width: "60%"}} className='mt-5 position-absolute top-60 start-50 translate-middle'>
+        <Card className={`d-flex align-items-center justify-content-center p-3 bg-${context.theme}`}>
+          <Card.Body>
+             <div
+               style={{backgroundColor: `${thisJob.logoBackground}`}} 
+               className='position-absolute top-0 start-50 translate-middle rounded-3 d-flex align-items-center justify-content-center size'>
+               <img src={thisJob.logo} />
+             </div>
+             <Card.Title className={`fw-bold text-center text-${context.theme === "light" ? "dark" : "light"}`}>{thisJob.company}</Card.Title>
+             <Card.Link className='text-muted' href="#">{thisJob.website}</Card.Link>
+          </Card.Body>
+          <div>
+            <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="lg">
+              Company Site
+            </Button>
+          </div>
+          
+        </Card>
+        </div>
+        </div>
+      </Container>
 
-       
-      <Container className='d-flex justify-content-center'>
+      <Container className='d-flex justify-content-center d-none d-md-block'>
         <div style={{height: "120px", width: "60%"}} className="border border-2  row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-light">
           <div
             style={{backgroundColor: `${thisJob.logoBackground}`}}
@@ -41,7 +61,7 @@ function JobDetails() {
               </div>
               
               <div className='mt-4'>
-                <Button variant="primary" size="lg">Company Site</Button>
+                <Button className='btn1' style={{backgroundColor: "#5964E0"}} size="lg">Company Site</Button>
               </div>
 
             </span>
@@ -51,21 +71,26 @@ function JobDetails() {
       </Container>
 
       <Container className='mt-5 p-5 d-flex justify-content-center'>
-        <div style={{width: "73%"}} className='border border-2 p-3'>
+        <div style={{width: "73%"}} className='border border-dark p-3'>
 
         <div className='d-flex justify-content-between pt-2'>
           <div className=''>
-            <Card.Link className='text-muted' href="#">{thisJob.postedAt}</Card.Link>*
-            <Card.Link className='text-muted' href="#">{thisJob.contract}</Card.Link>
+            <Card.Link className='text-muted' href="#">{thisJob.postedAt} <span className='fw-bold fs-1'>·</span> {thisJob.contract}</Card.Link>
             <Card.Title className={`fw-bold mt-2 text-${context.theme === "light" ? "dark" : "light"}`}>{thisJob.position}</Card.Title>
             <Card.Text className='fw-bold purple mt-2'>{thisJob.location}</Card.Text>
           </div>
           
-          <div className='mt-4'>
-            <Button variant="primary" size="lg">
+          <div className='mt-4 d-none d-md-block'>
+            <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="sm">
               Apply Now
             </Button>
           </div>
+        </div>
+
+        <div className="d-grid gap-2 d-block d-sm-block d-md-none mt-5">
+            <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="lg">
+              Apply Now
+            </Button>
         </div>
 
         <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
@@ -106,7 +131,7 @@ function JobDetails() {
         </div>
 
         <div>
-          <Button variant="primary" size="lg">
+          <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="lg">
               Apply Now
            </Button>
         </div>
