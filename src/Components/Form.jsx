@@ -57,15 +57,27 @@ function FormGroup(props) {
             fulltime: false
         })
 
+        const checkbox = document.querySelector('#checkbox-3');
+        checkbox.style.backgroundColor = '#9DAEC2';
+
         handleClose()
     }
+
+    function check(event) {
+        const checkbox = event.target;
+        if (checkbox.checked) {
+          checkbox.style.backgroundColor = '#5964E0';
+        } else {
+          checkbox.style.backgroundColor = '#FFFFFF';
+        }
+      }
   
   return (
     <ThemeContextConsumer>
         {context => (
             <Form onSubmit={handleSubmit}>
              <Container>
-             <div style={{height: "80px", width: "75%"}} className={`border border-2  row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-${context.theme}`}>
+             <div style={{height: "80px", width: "75%"}} className={` rounded-3 border-dark row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-${context.theme}`}>
                  
                  <div className='col-sm-3 col-md-3 col-lg-4 d-flex flex-row border-end h-100'>
                      <Form.Label><img className='mt-4 d-none d-sm-block' src='./assets/desktop/icon-search.svg' /></Form.Label>
@@ -114,9 +126,12 @@ function FormGroup(props) {
                      </Modal.Body>
                      </span>
                     </Modal>
-                    <div style={{backgroundColor: "#5964E0", height:"50px"}} className='mt-3 p-3 rounded-3 d-block d-sm-none'>
-                         <BsSearch className='mb-5' color='white' size={25} />
-                     </div>
+                
+                    <button type='submit'
+                            style={{backgroundColor: "#5964E0", height:"50px"}} 
+                            className='mt-3 p-3 rounded-3 d-block d-sm-none'>
+                        <BsSearch className='mb-5' color='white' size={25} />
+                    </button>
                      
                   </div>
                      
@@ -136,11 +151,12 @@ function FormGroup(props) {
                  <div className="col-sm-4 col-md-5 d-none d-sm-block h-100">
                      <span className='d-flex flex-row'>
                      <div className="form-check checkbox-xl mt-4 ms-3">
-                         <input style={{backgroundColor: "#9DAEC2"}} className="form-check-input" 
+                         <input style={{backgroundColor: "#9DAEC2", cursor:"pointer"}} className={`form-check-input bg-${context.theme === 'light' ? "#9DAEC2" : "dark"}`}
                                 type="checkbox" 
                                 name="fulltime"
                                 checked={formData.fulltime}
-                                onChange={handleChange} 
+                                onChange={handleChange}
+                                onClick={check} 
                                 id="checkbox-3" />
                          <label className={`form-check-label fw-bold d-none d-lg-block text-${context.theme === "light" ? "dark" : "light"}`}htmlFor="checkbox-3">Full Time Only</label>
                      </div>

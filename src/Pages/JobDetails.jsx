@@ -47,12 +47,12 @@ function JobDetails() {
         <div style={{height: "120px", width: "60%"}} className="border border-2  row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-light">
           <div
             style={{backgroundColor: `${thisJob.logoBackground}`}}
-            className='col-sm-3 col-md-3 d-flex flex-row h-100 border-end'
+            className='col-sm-3 col-md-3 col-lg-2 d-flex flex-row h-100 border-end p-5'
           >
             <img src={thisJob.logo} />
           </div>
      
-          <div className={`col-sm-9 col-md-9 h-100 bg-${context.theme}`}>
+          <div className={`col-sm-9 col-md-9 col-lg-10 h-100 bg-${context.theme}`}>
             <span className='d-flex justify-content-between'>
 
               <div className={`flex-column mt-4 text-${context.theme === "light" ? "dark" : "light"}`}>
@@ -60,8 +60,8 @@ function JobDetails() {
               <span>{thisJob.website}</span>
               </div>
               
-              <div className='mt-4'>
-                <Button className='btn1' style={{backgroundColor: "#5964E0"}} size="lg">Company Site</Button>
+              <div className='mt-5'>
+                <Button className={`purple text-${context.theme === "light" ? "purple" : "light"} p-2 `} style={{backgroundColor: "#6E8098", color:"5964E0"}} size="sm">Company Site</Button>
               </div>
 
             </span>
@@ -71,27 +71,29 @@ function JobDetails() {
       </Container>
 
       <Container className='mt-5 p-5 d-flex justify-content-center'>
-        <div style={{width: "73%"}} className='border border-dark p-3'>
+        <div style={{width: "75%"}} className='border border-dark p-5'>
 
-        <div className='d-flex justify-content-between pt-2'>
+        <div className='d-flex justify-content-between'>
           <div className=''>
-            <Card.Link className='text-muted' href="#">{thisJob.postedAt} <span className='fw-bold fs-1'>·</span> {thisJob.contract}</Card.Link>
-            <Card.Title className={`fw-bold mt-2 text-${context.theme === "light" ? "dark" : "light"}`}>{thisJob.position}</Card.Title>
+            <Card.Link className='text-muted' href="#">{thisJob.postedAt} <span className='fw-bold fs-1'>·</span>{thisJob.contract}</Card.Link>
+            <Card.Title className={`fw-bold mt-1 text-${context.theme === "light" ? "dark" : "light"}`}>{thisJob.position}</Card.Title>
             <Card.Text className='fw-bold purple mt-2'>{thisJob.location}</Card.Text>
           </div>
           
-          <div className='mt-4 d-none d-md-block'>
+          <div className='mt-5 d-none d-md-block'>
             <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="sm">
               Apply Now
             </Button>
           </div>
         </div>
 
-        <div className="d-grid gap-2 d-block d-sm-block d-md-none mt-5">
-            <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="lg">
+        <div className="d-grid gap-2 d-block d-md-none mt-5">
+            <Button style={{backgroundColor: "#5964E0"}} size="lg">
               Apply Now
             </Button>
         </div>
+
+       
 
         <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
             <p>{thisJob.description}</p>

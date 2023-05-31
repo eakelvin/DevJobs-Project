@@ -25,8 +25,8 @@ function Header(props) {
                       id="custom-switch"
                       label=""
                       onClick={context.toggleTheme}
-                      style={{cursor: "pointer"}}
-
+                      style={{cursor: "pointer", color:"5964E0"}}
+                      className=''
                     />
   
                   </Form>

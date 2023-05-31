@@ -1,5 +1,9 @@
 .purple {
-  color: #5964E0;
+  color: #5964E0 !important;
+}
+
+body {
+  background-color: #6E8098;
 }
 
 .back {

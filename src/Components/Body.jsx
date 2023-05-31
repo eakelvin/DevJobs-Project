@@ -14,7 +14,7 @@ function Body(props) {
            <Card.Body>
              <div
                style={{backgroundColor: `${props.logoBackground}`}} 
-               className='position-absolute top-0 start-10 translate-middle rounded-3 d-flex align-items-center justify-content-center size'>
+               className='position-absolute top-0 start-10 translate-middle rounded-3 d-flex align-items-center justify-content-center size p-4'>
                <img src={props.logo} />
              </div>
              <Card.Link className='text-muted' href="#">{props.postedAt}</Card.Link>
