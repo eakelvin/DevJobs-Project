@@ -3,7 +3,7 @@ import data from '../data.json'
 import Body from './Body'
 import { Container} from 'react-bootstrap'
 
-const Map = ({jobs, setJobs, search, setSearch}) => {
+const Map = ({jobs, setJobs, search, setSearch, items}) => {
 
   useEffect(()=>{
     setJobs(data)
@@ -11,7 +11,7 @@ const Map = ({jobs, setJobs, search, setSearch}) => {
       },[])
 
   const information = search.length === 0 ? (<h2>No Results Found</h2>) : 
-  (search.map((item) => {
+  (search.slice(0, items).map((item) => {
     return <Body
         key={item.id}
         {...item} 
