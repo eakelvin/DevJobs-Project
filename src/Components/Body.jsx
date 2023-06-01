@@ -20,7 +20,7 @@ function Body(props) {
              <Card.Link className='text-muted' href="#">{props.postedAt}</Card.Link>
              <Card.Link className='text-muted' href="#">{props.contract}</Card.Link>
              <Link to={`/jobdetails/${props.id}`}>
-              <Card.Title className={`fw-bold text-${context.theme === "light" ? "dark" : "light"}`}>{props.position}</Card.Title>
+              <h6 className={`fs-6 fw-bold text-${context.theme === "light" ? "dark" : "light"}`}>{props.position}</h6>
              </Link>
              
              <Card.Subtitle className="mb-2 text-muted">{props.company}</Card.Subtitle>

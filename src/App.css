@@ -1,6 +1,9 @@
 .purple {
   color: #5964E0 !important;
 }
+h6:hover {
+  color: #6e8098 !important;
+}
 
 .back {
   background-image: url("../assets/desktop/bg-pattern-header.svg");
