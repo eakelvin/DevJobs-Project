@@ -40,7 +40,7 @@ input.hover{
 
 @media only screen and (max-width: 480px) {
   .back {
-    background-image: url("./assets/mobile/bg-pattern-header.svg");
+    background-image: url("../assets/mobile/bg-pattern-header.svg");
   }
 }
 @media only screen and (max-width: 766px) {
