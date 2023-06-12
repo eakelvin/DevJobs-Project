@@ -89,7 +89,7 @@ function FormGroup(props) {
                                     placeholder="Filter by title, companies, expertise..." />
 
                     <div onClick={handleShow}>
-                        <img className='size d-block d-sm-none mt-4 mx-3' src="./assets/mobile/icon-filter.svg" alt="" />
+                        <img className='size d-block d-sm-none mt-4 pt-1 mx-2' src="./assets/mobile/icon-filter.svg" alt="" />
                     </div> 
                     <Modal className='p-5' centered show={show} onHide={handleClose} animation={false}>
                         <span className={`bg-${context.theme}`}>
@@ -128,9 +128,9 @@ function FormGroup(props) {
                     </Modal>
                 
                     <button type='submit'
-                            style={{backgroundColor: "#5964E0", height:"50px"}} 
-                            className='mt-3 p-3 rounded-3 d-block d-sm-none'>
-                        <BsSearch className='mb-5' color='white' size={25} />
+                            style={{backgroundColor: "#5964E0", height:"35px", width:"35px"}} 
+                            className='mt-4 mx-auto p-2 rounded-3 d-block d-sm-none'>
+                        <BsSearch className='mb-4' color='white' size={20} />
                     </button>
                      
                   </div>
