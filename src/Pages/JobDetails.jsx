@@ -21,7 +21,7 @@ function JobDetails() {
 
       <Container className='d-block d-sm-block d-md-none pb-5'>
         <div className='relative'>
-          <div style={{width: "60%"}} className='mt-5 position-absolute top-60 start-50 translate-middle'>
+          <div style={{width: "75%"}} className='pb-4 mt-5 position-absolute top-60 start-50 translate-middle'>
         <Card className={`d-flex align-items-center justify-content-center p-3 bg-${context.theme}`}>
           <Card.Body>
              <div
@@ -44,7 +44,7 @@ function JobDetails() {
       </Container>
 
       <Container className='d-flex justify-content-center d-none d-md-block'>
-        <div style={{height: "120px", width: "60%"}} className="border border-2  row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-light">
+        <div style={{height: "120px", width: "65%"}} className="border border-2 row align-items-start text-center position-absolute top-40 start-50 translate-middle bg-light">
           <div
             style={{backgroundColor: `${thisJob.logoBackground}`}}
             className='col-sm-3 col-md-3 col-lg-2 d-flex flex-row h-100 border-end p-5'
@@ -71,7 +71,7 @@ function JobDetails() {
       </Container>
 
       <Container className='mt-5 p-5 d-flex justify-content-center'>
-        <div style={{width: "75%"}} className='border border-dark p-5'>
+        <div style={{width: "100%"}} className='d-block d-md-none border border-dark p-5'>
 
         <div className='d-flex justify-content-between'>
           <div className=''>
@@ -92,8 +92,6 @@ function JobDetails() {
               Apply Now
             </Button>
         </div>
-
-       
 
         <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
             <p>{thisJob.description}</p>
@@ -119,7 +117,58 @@ function JobDetails() {
             <li>{thisJob.role.items[2]}</li>
             <li>{thisJob.role.items[3]}</li>
           </ol>
+        </div>
+      
+        </div>
+      </Container>
 
+      <Container className='d-flex justify-content-center'>
+        <div style={{width: "75%"}} className='d-none d-md-block border border-dark p-5'>
+
+        <div className='d-flex justify-content-between'>
+          <div className=''>
+            <Card.Link className='text-muted' href="#">{thisJob.postedAt} <span className='fw-bold fs-1'>·</span>{thisJob.contract}</Card.Link>
+            <Card.Title className={`fw-bold mt-1 text-${context.theme === "light" ? "dark" : "light"}`}>{thisJob.position}</Card.Title>
+            <Card.Text className='fw-bold purple mt-2'>{thisJob.location}</Card.Text>
+          </div>
+          
+          <div className='mt-5 d-none d-md-block'>
+            <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="sm">
+              Apply No
+            </Button>
+          </div>
+        </div>
+
+        <div className="d-grid gap-2 d-block d-md-none mt-5">
+            <Button style={{backgroundColor: "#5964E0"}} size="lg">
+              Apply Now
+            </Button>
+        </div>
+
+        <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
+            <p>{thisJob.description}</p>
+        </div>
+
+        <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
+          <h2 className='fw-bold'>Requirements</h2>
+          <p className='mt-3'>{thisJob.requirements.content}</p>
+          <ul className='p-3'>
+            <li>{thisJob.requirements.items[0]}</li>
+            <li>{thisJob.requirements.items[1]}</li>
+            <li>{thisJob.requirements.items[2]}</li>
+            <li>{thisJob.requirements.items[3]}</li>
+          </ul>
+        </div>
+
+        <div className={`mt-5 text-${context.theme === "light" ? "dark" : "light"}`}>
+          <h3 className='fw-bold mb-3'>What You Will Do</h3>
+          <p>{thisJob.role.content}</p>
+          <ol className='p-3'>
+            <li>{thisJob.role.items[0]}</li>
+            <li>{thisJob.role.items[1]}</li>
+            <li>{thisJob.role.items[2]}</li>
+            <li>{thisJob.role.items[3]}</li>
+          </ol>
         </div>
       
         </div>
