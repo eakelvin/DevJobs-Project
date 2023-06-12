@@ -134,7 +134,7 @@ function JobDetails() {
           
           <div className='mt-5 d-none d-md-block'>
             <Button style={{backgroundColor: "#5964E0"}} variant="primary" size="sm">
-              Apply No
+              Apply Now
             </Button>
           </div>
         </div>
@@ -187,8 +187,8 @@ function JobDetails() {
            </Button>
         </div>
         </div>
-        
       </Container>
+
       </>
        )}
       </ThemeContextConsumer>
